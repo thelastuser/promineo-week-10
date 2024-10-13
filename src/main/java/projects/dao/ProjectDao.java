@@ -135,7 +135,7 @@ public class ProjectDao extends DaoBase {
 		}
 	}
 
-	private Collection<? extends Material> fetchMaterialsForProject(Connection conn, Integer projectId) throws SQLException {
+	private List<Material> fetchMaterialsForProject(Connection conn, Integer projectId) throws SQLException {
 		// @formatter:off
 		String sql = ""
 				+ "SELECT m.* FROM " + MATERIAL_TABLE + " m "
@@ -161,7 +161,7 @@ public class ProjectDao extends DaoBase {
 		}
 	}
 
-	private Collection<? extends Step> fetchStepsForProject(Connection conn, Integer projectId) throws SQLException {
+	private List<Step> fetchStepsForProject(Connection conn, Integer projectId) throws SQLException {
 		// @formatter:off
 		String sql = ""
 				+ "SELECT s.* FROM " + STEP_TABLE + " s "

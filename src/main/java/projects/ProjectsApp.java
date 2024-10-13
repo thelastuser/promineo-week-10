@@ -23,7 +23,7 @@ public class ProjectsApp {
 	
 	// @formatter:off
 	private List<String> operations = List.of(
-			"\n1) Add a project",
+			"1) Add a project",
 			"2) List projects",
 			"3) Select a project"
 			);
@@ -104,14 +104,14 @@ public class ProjectsApp {
 
 	private boolean exitMenu() {
 		// flag for exit
-		System.out.println("Exiting the menu. Goodbye.");
+		System.out.println("\nExiting the menu. Goodbye.");
 		return true;
 	}
 
 	private int getUserSelection() {
 		printOperations();
 		
-		Integer input = getIntInput("Enter menu selection");
+		Integer input = getIntInput("\nEnter menu selection");
 		
 		return Objects.isNull(input) ? -1 : input;
 	}
@@ -141,9 +141,9 @@ public class ProjectsApp {
 	}
 
 	private void printOperations() {
-		System.out.print("\nThese are the available selections. Press the Enter key to quit: ");
+		System.out.println("\nThese are the available selections. Press the Enter key to quit.");
 		operations.forEach(line -> System.out.println(" " + line));
-		if (Objects.isNull(curProject)) {
+		if (curProject.getProjectId()==null) {
 			System.out.println("\nYou are not working with a project.");
 		}
 		else {
